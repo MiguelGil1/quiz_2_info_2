@@ -73,21 +73,27 @@ int main(){
     cout << "Suma: " << suma << endl;
 
     int mayor_letra = 0;
-    int veces_letra = 0;
+    int veces_letra = 1;
+    char letra = 0;
     for(int i = 0; i < int(strlen(cadena_caracteres)); i++){
         if(int(cadena_caracteres[i]) > mayor_letra){
             mayor_letra = cadena_caracteres[i];
+            letra = cadena_caracteres[i];
             veces_letra = 1;
         }else{
             veces_letra++;
         }
     }
-    char letra = mayor_letra;
+    for(int i = 0; i < int(strlen(cadena_caracteres)); i++){
+        if(cadena_caracteres[i] == letra){
+            veces_letra += 1;
+        }
+    }
     int mayor_numero = 0;
     int veces_numero = 0;
     for(int i = 0; i < int(strlen(cadena_numeros)); i++){
-        if(cadena_numeros[i] > mayor_numero){
-            mayor_numero = cadena_caracteres[i];
+        if(cadena_numeros[i]-48 > mayor_numero){
+            mayor_numero = cadena_caracteres[i]-48;
             veces_numero = 1;
         }else{
             veces_numero++;
